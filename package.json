@@ -1,0 +1,25 @@
+{
+  "name": "raziel",
+  "version": "1.0.0",
+  "description": " A Discord companion bot for the Shin Megami Tensei: Digital Devil Story Trading Card Game.",
+  "main": "dist/raziel.js",
+  "dependencies": {
+    "better-sqlite3": "^7.1.1",
+    "eris": "^0.13.3",
+    "node-gyp": "^7.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/that-hatter/raziel.git"
+  },
+  "author": "that-hatter",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/that-hatter/raziel/issues"
+  },
+  "homepage": "https://github.com/that-hatter/raziel#readme"
+}
