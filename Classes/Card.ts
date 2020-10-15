@@ -49,11 +49,12 @@ export type MagSet = {
 
 export abstract class Card {
   public readonly id: number;
-  public readonly serial: string;
   public readonly role: number;
   public readonly name: string;
   public readonly flavor: string;
   public readonly effects: Effect[];
+  public readonly serial: string;
+  public readonly imgURL: string;
   public abstract display(msg: Message, bot: Bot): Promise<Message | void>;
 
   constructor(
@@ -64,15 +65,19 @@ export abstract class Card {
     ...effects: Effect[]
   ) {
     this.id = id;
-    this.serial =
-      id < Series.G
-        ? `${id % 1e6}`.padStart(3, "0")
-        : `${strings.series[Math.floor(id / 1e6) * 1e6]}` +
-          `${id % 1e6}`.padStart(4, "0");
     this.role = role;
     this.name = name;
     this.flavor = flavor;
     this.effects = [...effects];
+
+    const ser = strings.series[Math.floor(id / 1e6) * 1e6];
+    this.serial =
+      id < Series.G
+        ? `${id % 1e6}`.padStart(3, "0")
+        : ser + `${id % 1e6}`.padStart(4, "0");
+    this.imgURL =
+      "https://raw.githubusercontent.com/that-hatter/dds-vulgate/master/cardpics/" +
+      `${id < Series.G ? "Base" : ser}/${this.serial}.jpg`;
   }
 
   public isSerial(s: string): boolean {

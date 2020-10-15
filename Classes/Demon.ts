@@ -129,6 +129,9 @@ export class Demon extends Card {
         footer: {
           text: this.serial,
         },
+        thumbnail: {
+          url: this.imgURL,
+        },
       },
     });
   }

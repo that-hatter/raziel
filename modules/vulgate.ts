@@ -1,4 +1,5 @@
 import Database from "better-sqlite3";
+import path from "path";
 import { Card, Raw } from "../Classes/Card";
 import { Demon } from "../Classes/Demon";
 import { Item } from "../Classes/Item";
@@ -6,7 +7,6 @@ import { Partner } from "../Classes/Partner";
 import { Pile } from "../Classes/Pile";
 import { Spell } from "../Classes/Spell";
 import { Role } from "./enums";
-import path from "path";
 
 const dir = path.join(__dirname, "..", "resources", "vulgate.db"); //TODO: better database directory management
 const db = new Database(dir);

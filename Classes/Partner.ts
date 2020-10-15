@@ -71,6 +71,9 @@ export class Partner extends Card {
         footer: {
           text: this.serial,
         },
+        thumbnail: {
+          url: this.imgURL,
+        },
       },
     });
   }
